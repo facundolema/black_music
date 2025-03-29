@@ -1,0 +1,81 @@
+
+.phone-container {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/bg9.png');
+  background-size: cover;
+  h1 {
+    position: absolute;
+    left: 40px;
+    font-family: 'Limelight', sans-serif;
+    font-weight: bold;
+    font-kerning: 10rem;
+    font-size: 6rem;
+    margin: 1rem 0;
+    color: white;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+}
+
+.phone {
+  position: relative;
+  width: 250px;
+  height: 500px;
+}
+
+.masked-video {
+  width: calc(100% - 10px);
+  height: 100%;
+  position: absolute;
+  right: 5px;
+  object-fit: cover; /* Ensures the video fills the container */
+  -webkit-mask-image: url('/phone-screen.svg'); /* Apply the SVG as a mask */
+  -webkit-mask-size: cover; /* Ensure the mask covers the entire video */
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-image: url('/phone-screen.svg'); /* Fallback for non-WebKit browsers */
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  border: 1px solid blue;
+  overflow: hidden; /* Hide any overflow from the video */
+  border-radius: 3rem;
+}
+
+.phone-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Ensure the mockup doesn't block interactions */
+}
+
+.video-control {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust for the button's height */
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 9999px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+}
+
+.prev-button {
+  left: 20px; /* Position on the left side */
+}
+
+.next-button {
+  right: 20px; /* Position on the right side */
+}
