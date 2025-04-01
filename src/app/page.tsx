@@ -92,12 +92,14 @@ const handlePrev = () => {
   }
 }
 
+// @ts-ignore
 const handleTouchStart = (e, setStartX, setStartY) => {
   setStartX(e.touches[0].clientX)
   setStartY(e.touches[0].clientY)
   console.log("Touch Start", e.touches[0].clientX, e.touches[0].clientY);
 }
 
+// @ts-ignore
 const handleTouchEnd = (e, startX, startY) => {
   let endX = e.changedTouches[0].clientX;
   let endY = e.changedTouches[0].clientY;
