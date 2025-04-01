@@ -122,8 +122,6 @@ div.vinyl {
           display: flex;
           justify-content: center;
           align-items: center;
-          background-image: url('/bg8.png');
-          background-size: cover;
 
           div.phone {
             width: 50%;
