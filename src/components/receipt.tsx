@@ -60,10 +60,10 @@ export default function Receipt() {
           <a href="mailto:contact@volfram.studio">
             <img src="/mail.svg" alt="Mail" height={20} width={20} style={{ fill: 'white' }} />
           </a>
-          <a href="https://wa.me/5491156981844" target="_blank">
+          <a href="https://wa.me/5491144296486" target="_blank">
             <img src="/whatsapp.svg" alt="WhatsApp" height={20} width={20} style={{ fill: 'white', stroke: 'white' }} />
           </a>
-          <a href="tel:+5491156981844">
+          <a href="tel:+5491144296486">
             <img src="/telephone.svg" alt="Phone number" height={20} width={20} />
           </a>
         </div>

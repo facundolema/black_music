@@ -1,7 +1,7 @@
 import '../styles/styles.css';
 
 export default function Record(
-  { id, bg, children }: { id: Number, bg: string, children: React.ReactNode }
+  { bg, children }: { bg: string, children: React.ReactNode }
 ) {
   return (
     <>
