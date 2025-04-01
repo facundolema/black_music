@@ -37,7 +37,7 @@ export default function Phone() {
     };
   }, []);
   return (
-    <Record id={1000} bg="phone">
+    <Record bg="phone">
       <div className="phone-container">
         <h1>EJEMPLOS</h1>
         <div className="phone">
