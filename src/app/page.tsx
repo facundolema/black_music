@@ -27,6 +27,7 @@ const records = content.reverse().flatMap((entry, index) => {
   } else {
     return (
       <Record key={index} bg={`bg${index + 1}`}>
+        {entry.subtitle && <h2>{entry.subtitle}</h2>}
         <h1>{entry.title}</h1>
         <p>{entry.description}</p>
         {entry.content && (

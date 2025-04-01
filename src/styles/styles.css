@@ -11,7 +11,7 @@ body {
 
 body {
   background-image:
-    url('/background.png'),
+    url('/records.svg'),
     linear-gradient(45deg, black, #1f1f1f, #000);
 }
 
@@ -33,18 +33,25 @@ body {
   text-shadow: black 0 0 10px;
 
   h1 {
-    font-family: 'Limelight', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-kerning: 10rem;
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: 3rem;
+    line-height: 3rem;
     margin: 1rem 0;
+    text-shadow: black 0 0 15px;
   }
-
+  
   h2 {
-    font-size: 1rem;
-    margin-bottom: 1.5rem 0;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 4px;
+    padding: 0.1rem 1rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.1);
     align-self: flex-start;
+    text-transform: uppercase;
+    font-size: 0.85rem;
   }
 
   p {

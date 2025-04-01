@@ -79,13 +79,14 @@
         "description": "3 publicaciones semanales (incluyendo al menos 1 reel por semana). La cantidad puede ajustarse en función del contenido disponible."
       },
       {
-        "title": "Historias:",
-        "description": "publicaciones diarias para mantener la cuenta activa y fomentar la interacción."
+        "title": "Historias diarias",
+        "description": "para mantener la cuenta activa y fomentar la interacción."
       }
     ]
   },
   {
-    "title": "Publicidad paga (opcional)",
+    "title": "Publicidad paga",
+    "subtitle": "opcional",
     "description": "Si se decide complementar la estrategia con publicidad paga, se recomienda invertir en campañas segmentadas en Instagram y Facebook, dirigidas a músicos y amantes de la música. Se puede evaluar un presupuesto adicional para maximizar el impacto.",
     "content": []
   },

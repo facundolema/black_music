@@ -3,6 +3,7 @@ import '../styles/receipt.css';
 export default function Receipt() {
   return (
     <div className="receipt-container">
+      <div className="receipt-bg" />
       <div className="receipt">
         <div className="receipt-body">
           {/* HEADER */}
@@ -48,22 +49,24 @@ export default function Receipt() {
               las cuales tendrán un costo aparte, determinado por la plataforma,
               dependiendo de la duración y el alcance.
             </p>
-            <p>* El monto se actualizará de forma <strong>bimestral</strong> por <strong>IPC.</strong></p>
+            <p>* El presupuesto se actualizará de forma <strong>bimestral</strong> por <strong>IPC.</strong></p>
           </div>
         </div>
       </div>
       <div className="contact">
-        <a href="mailto:contact@volfram.studio">
-          <img src="/mail.svg" alt="Mail" height={20} width={20} style={{ fill: 'white'}}/>
-        </a>
-        <a href="https://wa.me/5491156981844" target="_blank">
-          <img src="/whatsapp.svg" alt="WhatsApp" height={20} width={20} style={{fill: 'white', stroke: 'white'}} />
-        </a>
-        <a href="tel:+5491156981844">
-          <img src="/telephone.svg" alt="Phone number" height={20} width={20} />
-        </a>
-        <p>-</p>
-        <h1 style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)'}}>Volfram Studio</h1>
+        <h1 style={{ writingMode: 'vertical-rl' }}>Volfram Studio</h1>
+        <p>—</p>
+        <div className='links'>
+          <a href="mailto:contact@volfram.studio">
+            <img src="/mail.svg" alt="Mail" height={20} width={20} style={{ fill: 'white' }} />
+          </a>
+          <a href="https://wa.me/5491156981844" target="_blank">
+            <img src="/whatsapp.svg" alt="WhatsApp" height={20} width={20} style={{ fill: 'white', stroke: 'white' }} />
+          </a>
+          <a href="tel:+5491156981844">
+            <img src="/telephone.svg" alt="Phone number" height={20} width={20} />
+          </a>
+        </div>
       </div>
     </div>
   )
