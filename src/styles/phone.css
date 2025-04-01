@@ -42,9 +42,7 @@
   mask-size: cover;
   mask-repeat: no-repeat;
   mask-position: center;
-  border: 1px solid blue;
   overflow: hidden; /* Hide any overflow from the video */
-  border-radius: 3rem;
 }
 
 .phone-mask {

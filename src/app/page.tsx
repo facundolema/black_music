@@ -5,6 +5,7 @@ import Record from "@/components/record";
 import Receipt from "@/components/receipt";
 import Phone from "@/components/phone";
 import content from "./content.json";
+import { useEffect, useRef, useState } from "react";
 
 const records = content.reverse().flatMap((entry, index) => {
   if (entry.title === "Estrategia de Comunidad") {
@@ -52,16 +53,17 @@ const handleWheel = (e) => {
 
 const handleNext = () => {
   const covers = document.querySelectorAll('.cover');
-  console.log(covers);
   const vinyls = document.querySelectorAll('.vinyl');
+  const isSmallScreen = window.matchMedia('(max-width: 600px)').matches;
+  const translateAmount = isSmallScreen ? '200%' : '75vw';
   for (let i = covers.length - 1; i >= 0; i--) {
     console.log(covers[i]);
     // @ts-ignore
     if (!covers[i].displacement || covers[i].displacement === 0) {
       // @ts-ignore
-      covers[i].style.transform = `translate(-75vw, -10vh) rotate(-30deg)`;
+      covers[i].style.transform = `translate(-${translateAmount}, -10vh) rotate(-30deg)`;
       // @ts-ignore
-      vinyls[i].style.transform = `translate(75vw, -10vh) rotate(-180deg)`;
+      vinyls[i].style.transform = `translate(${translateAmount}, -10vh) rotate(-180deg)`;
       // @ts-ignore
       covers[i].displacement = -50;
       // @ts-ignore
@@ -90,15 +92,47 @@ const handlePrev = () => {
   }
 }
 
-// @ts-ignore
-const handleTouchMove = (e) => {
-  console.log(e);
+const handleTouchStart = (e, setStartX, setStartY) => {
+  setStartX(e.touches[0].clientX)
+  setStartY(e.touches[0].clientY)
+  console.log("Touch Start", e.touches[0].clientX, e.touches[0].clientY);
 }
 
-export default function Home() {
+const handleTouchEnd = (e, startX, startY) => {
+  let endX = e.changedTouches[0].clientX;
+  let endY = e.changedTouches[0].clientY;
 
+  let diffX = endX - startX;
+  let diffY = endY - startY;
+
+      if (Math.abs(diffX) > Math.abs(diffY)) {
+          if (diffX > 0) {
+            handlePrev();
+          } else {
+            handleNext();
+          }
+      } else {
+          if (diffY > 0) {
+              console.log("Swipe Down");
+              handlePrev();
+          } else {
+              console.log("Swipe Up");
+              handleNext();
+          }
+      }
+
+    }
+
+export default function Home() {
+  const [startX, setStartX] = useState(0);
+  const [startY, setStartY] = useState(0);
   return (
-    <div className="page" onWheel={handleWheel} onTouchMove={handleTouchMove}>
+    <div
+      className="page"
+      onWheel={handleWheel}
+      onTouchStart={(e) => handleTouchStart(e, setStartX, setStartY)}
+      onTouchEnd={(e) => handleTouchEnd(e, startX, startY)}  
+    >
       <div className="stack">
         <Receipt />
         {records}
